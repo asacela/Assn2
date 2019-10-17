@@ -58,14 +58,14 @@ void Stack::popSecond() {
 }
 
 int Stack::peekFirst() {
-	if(!isEmptyFirst){
+	if(!isEmptyFirst()){
 		return array[0];
 	}
 	else{ return 0;}
 }
 
 int Stack::peekSecond() {
-	if(!isEmptySecond){
+	if(!isEmptySecond()){
 		return array[size / 2];
 	}
 	else{ return 0;}

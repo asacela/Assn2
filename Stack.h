@@ -6,7 +6,6 @@ class Stack {
 private:
 	int size;
 	int *array;
-	int data;
 	int firstSize;
 	int secondSize;
 	void doubleArraySize();
@@ -14,8 +13,8 @@ public:
 		Stack();
 		void pushFirst(int data);
 		void pushSecond(int data);
-		int popFirst();
-		int popSecond();
+		void popFirst();
+		void popSecond();
 		int peekFirst();
 		int peekSecond();
 		bool isEmptyFirst();
