@@ -12,9 +12,22 @@ Stack::Stack() {
 
 void Stack::pushFirst(int data) {
 
-	if (firstCapacity < (size / 2) - 1) {
+	if (firstCapacity < (size / 2)) {
 
-		for(int i = 0; i < firstCapacity; ++i){
+		for(int i = 0; i < size / 2; ++i){
+			array[i+1] = array[i];
+		}
+
+		array[0] = data;
+
+
+		firstCapacity++;
+	}
+	else{
+
+		doubleArraySize();
+
+		for(int i = 0; i < size / 2; ++i){
 			array[i+1] = array[i];
 		}
 
@@ -27,14 +40,44 @@ void Stack::pushFirst(int data) {
 }
 
 void Stack::pushSecond(int data) {
-	array[size / 2] = data;
+
+	if (secondCapacity < (size / 2)) {
+
+		for(int i = size / 2; i < size; ++i){
+			array[i+1] = array[i];
+		}
+
+		array[0] = data;
+
+
+		secondCapacity++;
+	}
+	else{
+
+		doubleArraySize();
+
+		for(int i = size / 2; i < size; ++i){
+			array[i+1] = array[i];
+		}
+
+		array[0] = data;
+
+
+		secondCapacity++;
+	}
 }
 
-int Stack::popFirst() {
-	return array[0];
+void Stack::popFirst() {
+
+	for(int i = (size / 2) -; i >= 0; --i){
+
+		array[i - 1]
+	}
+
+	firstCapacity--;
 }
 
-int Stack::popSecond() {
+void Stack::popSecond() {
 	return array[size / 2];
 }
 
@@ -79,5 +122,18 @@ int Stack::getLengthSecond(int array[], int size) {
 }
 
 void Stack::doubleArraySize(){
+	int new_size = size * 2;
+	int *temp = new int [new_size];
+
+	for(int i = 0; i < size; ++i){
+
+		temp[i] = array[i];
+
+	}
+
+	array = temp;
+	delete[] temp;
+
+
 	
 }
