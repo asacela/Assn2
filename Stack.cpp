@@ -127,16 +127,19 @@ void Stack::doubleArraySize(){
 	int new_size = size * 2;
 	int *temp = new int [new_size];
 
-	for(int i = 0; i < size; ++i){
-
+	// Copy first half
+	for(int i = 0; i < size/2; ++i){
 		temp[i] = array[i];
+	}
 
+	// Copy second half
+	int j = 0;
+	for(int i = size/2; i < size; ++i){
+		temp[new_size/2 + j] = array[i];
+		j++;
 	}
 
 	size = new_size;
+	delete[] array;
 	array = temp;
-	delete[] temp;
-
-
-	
 }
