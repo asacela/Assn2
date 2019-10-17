@@ -2,7 +2,10 @@
 #define STACK_H_
 
 class Stack {
-	public:
+
+private: 
+	int size;
+public:
 		Stack();
 		void pushFirst(int array[], int size, int data);
 		void pushSecond(int array[], int size, int data);
