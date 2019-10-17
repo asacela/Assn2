@@ -4,7 +4,6 @@ using namespace std;
 #include "Stack.h"
 
 int main() {
-	cout << "CHANGE" << endl;
 	// cout << "Initial Array: [";
 	// for (int i = 0; i < size - 1; i++) {
 	// 	cout << array[i] << ", ";
