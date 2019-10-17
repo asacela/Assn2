@@ -11,22 +11,16 @@ Stack::Stack() {
 }
 
 void Stack::pushFirst(int data) {
-
-	if (firstSize < (size / 2)) {
-
-		for(int i = 0; i < size / 2; ++i){
-			array[i+1] = array[i];
-		}
-
+	if (firstSize + 1 < (size / 2)) {
+		// Move each element one over
+		for(int i = firstSize - 1; i >= 0; --i){
+			array[i + 1] = array[i];
+		} 
 		array[0] = data;
-
-
 		firstSize++;
 	}
 	else{
-
 		doubleArraySize();
-
 		for(int i = 0; i < size / 2; ++i){
 			array[i+1] = array[i];
 		}
@@ -138,7 +132,7 @@ void Stack::doubleArraySize(){
 		temp[new_size/2 + j] = array[i];
 		j++;
 	}
-
+SS
 	size = new_size;
 	delete[] array;
 	array = temp;
