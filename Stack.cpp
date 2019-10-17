@@ -11,61 +11,39 @@ Stack::Stack() {
 }
 
 void Stack::pushFirst(int data) {
+
 	if (firstSize + 1 < (size / 2)) {
 		// Move each element one over
 		for(int i = firstSize - 1; i >= 0; --i){
 			array[i + 1] = array[i];
-		} 
+		}
 		array[0] = data;
 		firstSize++;
 	}
 	else{
 		doubleArraySize();
-		for(int i = 0; i < size / 2; ++i){
-			array[i+1] = array[i];
-		}
-
-		array[0] = data;
-
-
-		firstSize++;
+		pushFirst(data);
 	}
-
 }
 
 void Stack::pushSecond(int data) {
 
-	if (secondSize < (size / 2)) {
-
-		for(int i = size / 2; i < size; ++i){
-			array[i+1] = array[i];
+	if (secondSize + 1 < (size / 2)) {
+		for(int i = secondSize - 1 + (size / 2); i >= size/2; --i){
+			array[i + 1] = array[i];
 		}
-
-		array[0] = data;
-
-
-		secondSize
-++;
+		array[size/2] = data;
+		secondSize++;
 	}
 	else{
-
 		doubleArraySize();
-
-		for(int i = size / 2; i < size; ++i){
-			array[i+1] = array[i];
-		}
-
-		array[0] = data;
-
-
-		secondSize
-++;
+		pushSecond(data);
 	}
 }
 
 void Stack::popFirst() {
 
-	for(int i = (size / 2) -; i >= 0; --i){
+	for(int i = (size / 2); i >= 0; --i){
 
 		array[i - 1]
 	}
