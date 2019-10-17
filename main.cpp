@@ -16,6 +16,7 @@ int main() {
 				 << "Enter p to print" << endl
 				 << "Enter q to quit" << endl;
 		cin >> userChar;
+		cout << endl;
 
 		if(userChar == 'a'){}
 		else if(userChar == 'b'){}
@@ -25,7 +26,7 @@ int main() {
 		else if(userChar == 'f'){}
 		else if(userChar == 'p'){}
 		else{
-			cout << "Invalid command" << endl;
+			cout << "Invalid command." << endl;
 		}
 	}
 
