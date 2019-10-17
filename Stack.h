@@ -21,6 +21,8 @@ public:
 		bool isEmptySecond();
 		int getLengthFirst();
 		int getLengthSecond();
+		void printFirst();
+		void printSecond();
 };
 
 #endif

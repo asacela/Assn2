@@ -6,5 +6,7 @@ using namespace std;
 int main() {
 	Stack list;
 
+
+
 	return 0;
 }
