@@ -126,6 +126,8 @@ void Stack::printFirst(){
 		cout << array[i] << ", ";
 	}
 
+	cout << endl;
+
 }
 
 void Stack::printSecond(){
@@ -135,6 +137,8 @@ void Stack::printSecond(){
 	for (int i = 0; i < secondSize; ++i) {
 		cout << array[(size / 2) + i] << ", ";
 	}
+
+	cout << endl;
 
 }
 
