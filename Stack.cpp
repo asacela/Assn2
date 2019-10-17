@@ -16,7 +16,7 @@ Stack::~Stack() {
 
 void Stack::pushFirst(int data) {
 
-	if (firstSize + 1 < (size / 2)) {
+	if (firstSize + 1 <= (size / 2)) {
 		// Move each element one over
 		for(int i = firstSize - 1; i >= 0; --i){
 			array[i + 1] = array[i];
@@ -32,11 +32,11 @@ void Stack::pushFirst(int data) {
 
 void Stack::pushSecond(int data) {
 
-	if (secondSize + 1 < (size / 2)) {
-		for(int i = secondSize - 1 + (size / 2); i >= size/2; --i){
-			array[i + 1] = array[i];
+	if (secondSize + 1 <= (size / 2)) {
+		for(int i = secondSize - 1 + (size / 2); i >= (size / 2); --i){
+			array[(size / 2) + i + 1] = array[(size / 2) + i];
 		}
-		array[size/2] = data;
+		array[(size/2)] = data;
 		secondSize++;
 	}
 	else{
@@ -47,46 +47,78 @@ void Stack::pushSecond(int data) {
 
 void Stack::popFirst() {
 
-	for(int i = 0; i < firstSize - 1; ++i){
-		array[i] = array[i + 1];
+	if(!isEmptyFirst()){
+		for(int i = 0; i < firstSize - 1; ++i){
+			array[i] = array[i + 1];
+		}
+		firstSize--;
 	}
-	firstSize--;
+	else{
+		// do nothing
+	}
 }
 
 void Stack::popSecond() {
 
-	for(int i = 0; i < secondSize - 1; ++i){
-		array[(size/2) + i] = array[(size/2) + i + 1];
+	if(!isEmptySecond()){
+		for(int i = 0; i < secondSize - 1; ++i){
+			array[(size/2) + i] = array[(size/2) + i + 1];
+		}
+		secondSize--;
 	}
-	secondSize--;
+	else{
+		// do nothing
+	}
 }
 
 int Stack::peekFirst() {
+
 	if(!isEmptyFirst()){
+
 		return array[0];
 	}
-	else{ return 0;}
+	else{ 
+
+		cout << "First Stack is Empty." << endl;
+	
+		return 0;
+	}
 }
 
 int Stack::peekSecond() {
+
 	if(!isEmptySecond()){
-		return array[size / 2];
+
+		return array[(size / 2)];
 	}
-	else{ return 0;}
+	else{ 
+
+		cout << "Second Stack is Empty." << endl;
+	
+		return 0;
+	}
 }
 
 bool Stack::isEmptyFirst() {
+
 	if (firstSize == 0) {
+
 		return true;
-	} else {
+	} 
+	else {
+
 		return false;
 	}
 }
 
 bool Stack::isEmptySecond() {
+
 	if (secondSize == 0) {
+
 		return true;
-	} else {
+	} 
+	else {
+
 		return false;
 	}
 }
@@ -102,18 +134,19 @@ int Stack::getLengthSecond() {
 }
 
 void Stack::doubleArraySize(){
+	cout << "Doubling Array Size..." << endl;
 	int new_size = size * 2;
 	int *temp = new int [new_size];
 
 	// Copy first half
-	for(int i = 0; i < size/2; ++i){
+	for(int i = 0; i < (size / 2); ++i){
 		temp[i] = array[i];
 	}
 
 	// Copy second half
 	int j = 0;
-	for(int i = size/2; i < size; ++i){
-		temp[new_size/2 + j] = array[i];
+	for(int i = (size / 2); i < size; ++i){
+		temp[(new_size / 2) + j] = array[i];
 		j++;
 	}
 
@@ -127,7 +160,14 @@ void Stack::printFirst(){
 	cout << "Printing First Stack: ";
 
 	for (int i = 0; i < firstSize; ++i) {
-		cout << array[i] << ", ";
+		if(i == 0){
+			cout << array[i];
+		}
+		else{
+			
+			cout << ", " << array[i];
+		}
+		
 	}
 
 	cout << endl;
@@ -139,7 +179,15 @@ void Stack::printSecond(){
 	cout << "Printing Second Stack: ";
 
 	for (int i = 0; i < secondSize; ++i) {
-		cout << array[(size / 2) + i] << ", ";
+
+		if(i == 0){
+			cout << array[(size / 2) + i];
+		}
+		else{
+
+			cout << ", " << array[(size / 2) + i];
+		}
+		
 	}
 
 	cout << endl;
