@@ -9,6 +9,9 @@ Stack::Stack() {
 	firstSize = 0;
 	secondSize = 0;
 }
+stack::~Stack() {
+	delete[] array;
+}
 
 void Stack::pushFirst(int data) {
 

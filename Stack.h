@@ -11,6 +11,7 @@ private:
 	void doubleArraySize();
 public:
 		Stack();
+		~Stack();
 		void pushFirst(int data);
 		void pushSecond(int data);
 		void popFirst();
