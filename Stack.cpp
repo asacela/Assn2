@@ -55,17 +55,19 @@ void Stack::popSecond() {
 
 	for(int i = 0; i < secondSize - 1; ++i){
 
-		array[i] = array[i + 1];
+		array[size/2] = array[(size/2) + 1];
 	}
 
-	firstSize--;
+	secondSize--;
 }
 
 int Stack::peekFirst() {
+
 	return array[0];
 }
 
 int Stack::peekSecond() {
+
 	return array[size / 2];
 }
 
@@ -116,7 +118,7 @@ void Stack::doubleArraySize(){
 		temp[new_size/2 + j] = array[i];
 		j++;
 	}
-SS
+
 	size = new_size;
 	delete[] array;
 	array = temp;
