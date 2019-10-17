@@ -42,6 +42,7 @@ void Stack::pushSecond(int data) {
 }
 
 void Stack::popFirst() {
+
 	for(int i = 0; i < firstSize - 1; ++i){
 		array[i] = array[i + 1];
 	}
@@ -49,11 +50,10 @@ void Stack::popFirst() {
 }
 
 void Stack::popSecond() {
+
 	for(int i = 0; i < secondSize - 1; ++i){
-
-		array[size/2] = array[(size/2) + 1];
+		array[(size/2) + i] = array[(size/2) + i + 1];
 	}
-
 	secondSize--;
 }
 
@@ -87,12 +87,12 @@ bool Stack::isEmptySecond() {
 	}
 }
 
-int Stack::getLengthFirst(int array[], int size) {
+int Stack::getLengthFirst() {
 
 	return firstSize;
 }
 
-int Stack::getLengthSecond(int array[], int size) {
+int Stack::getLengthSecond() {
 
 	return secondSize;
 }
