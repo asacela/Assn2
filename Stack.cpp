@@ -50,8 +50,7 @@ void Stack::pushSecond(int data) {
 		array[0] = data;
 
 
-		secondSize
-++;
+		secondSize++;
 	}
 	else{
 
@@ -64,16 +63,20 @@ void Stack::pushSecond(int data) {
 		array[0] = data;
 
 
-		secondSize
-++;
+		secondSize++;
 	}
 }
 
 void Stack::popFirst() {
 
-	for(int i = (size / 2) -; i >= 0; --i){
+	for(int i = (size / 2) - 1; i >= 0; --i){
 
-		array[i - 1]
+		if(i == (size / 2) - 1){
+
+		}
+		else{
+			array[]
+		}
 	}
 
 	firstSize--;
