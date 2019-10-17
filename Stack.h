@@ -3,12 +3,12 @@
 
 class Stack {
 
-private: 
+private:
 	int size;
 	int *list;
 	int data;
-	int firstCapacity;
-	int secondCapacity;
+	int firstSize;
+	int secondSize;
 	void doubleArraySize();
 public:
 		Stack();

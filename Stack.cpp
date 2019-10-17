@@ -60,7 +60,10 @@ int Stack::peekFirst() {
 }
 
 int Stack::peekSecond() {
-	return array[size / 2];
+	if(!isEmptySecond){
+		return array[size / 2];
+	}
+	else{ return 0;}
 }
 
 bool Stack::isEmptyFirst() {
@@ -80,19 +83,13 @@ bool Stack::isEmptySecond() {
 }
 
 int Stack::getLengthFirst(int array[], int size) {
-	int stackLength = 1;
-	for (int i = 1; i < size / 2; i++) {
-		stackLength++;
-	}
-	return stackLength;
+
+	return firstSize;
 }
 
 int Stack::getLengthSecond(int array[], int size) {
-	int stackLength = 1;
-	for (int i = size / 2; i < size - 1; i++) {
-		stackLength++;
-	}
-	return stackLength;
+
+	return secondSize;
 }
 
 void Stack::doubleArraySize(){
