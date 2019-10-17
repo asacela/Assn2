@@ -5,7 +5,7 @@ class Stack {
 
 private:
 	int size;
-	int *list;
+	int *array;
 	int data;
 	int firstSize;
 	int secondSize;

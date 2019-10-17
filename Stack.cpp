@@ -42,27 +42,24 @@ void Stack::pushSecond(int data) {
 }
 
 void Stack::popFirst() {
-
 	for(int i = 0; i < firstSize - 1; ++i){
-
 		array[i] = array[i + 1];
 	}
-
 	firstSize--;
 }
 
 void Stack::popSecond() {
-
 	for(int i = 0; i < secondSize - 1; ++i){
-
 		array[i] = array[i + 1];
 	}
-
 	firstSize--;
 }
 
 int Stack::peekFirst() {
-	return array[0];
+	if(!isEmptyFirst){
+		return array[0];
+	}
+	else{ return 0;}
 }
 
 int Stack::peekSecond() {
