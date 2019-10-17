@@ -9,7 +9,8 @@ Stack::Stack() {
 	firstSize = 0;
 	secondSize = 0;
 }
-stack::~Stack() {
+
+Stack::~Stack() {
 	delete[] array;
 }
 

@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
 	Stack list;
+	int userInt;
 	char userChar = ' ';
 	while (userChar != 'q'){
 		cout << "Enter a for pushFirst" << endl
