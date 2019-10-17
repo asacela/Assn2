@@ -120,3 +120,25 @@ void Stack::doubleArraySize(){
 	delete[] array;
 	array = temp;
 }
+
+void Stack::printFirst(){
+
+	cout << "Printing First Stack: ";
+
+	for (int i = 0; i < firstSize; ++i) {
+		cout << array[i] << ", ";
+	}
+
+}
+
+void Stack::printSecond(){
+
+	cout << "Printing Second Stack: ";
+
+	for (int i = 0; i < secondSize; ++i) {
+		cout << array[(size / 2) + i] << ", ";
+	}
+
+}
+
+
