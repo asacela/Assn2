@@ -43,16 +43,22 @@ void Stack::pushSecond(int data) {
 
 void Stack::popFirst() {
 
-	for(int i = (size / 2); i >= 0; --i){
+	for(int i = 0; i < firstSize - 1; ++i){
 
-		array[i - 1]
+		array[i] = array[i + 1];
 	}
 
 	firstSize--;
 }
 
 void Stack::popSecond() {
-	return array[size / 2];
+
+	for(int i = 0; i < secondSize - 1; ++i){
+
+		array[i] = array[i + 1];
+	}
+
+	firstSize--;
 }
 
 int Stack::peekFirst() {
