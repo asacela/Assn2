@@ -6,13 +6,13 @@ using namespace std;
 Stack::Stack() {
 	size = 10;
 	array = new int [size];
-	firstCapacity = 0;
-	secondCapacity = 0;
+	firstSize = 0;
+	secondSize = 0;
 }
 
 void Stack::pushFirst(int data) {
 
-	if (firstCapacity < (size / 2)) {
+	if (firstSize < (size / 2)) {
 
 		for(int i = 0; i < size / 2; ++i){
 			array[i+1] = array[i];
@@ -21,7 +21,7 @@ void Stack::pushFirst(int data) {
 		array[0] = data;
 
 
-		firstCapacity++;
+		firstSize++;
 	}
 	else{
 
@@ -34,14 +34,14 @@ void Stack::pushFirst(int data) {
 		array[0] = data;
 
 
-		firstCapacity++;
+		firstSize++;
 	}
 
 }
 
 void Stack::pushSecond(int data) {
 
-	if (secondCapacity < (size / 2)) {
+	if (secondSize < (size / 2)) {
 
 		for(int i = size / 2; i < size; ++i){
 			array[i+1] = array[i];
@@ -50,7 +50,8 @@ void Stack::pushSecond(int data) {
 		array[0] = data;
 
 
-		secondCapacity++;
+		secondSize
+++;
 	}
 	else{
 
@@ -63,7 +64,8 @@ void Stack::pushSecond(int data) {
 		array[0] = data;
 
 
-		secondCapacity++;
+		secondSize
+++;
 	}
 }
 
@@ -74,7 +76,7 @@ void Stack::popFirst() {
 		array[i - 1]
 	}
 
-	firstCapacity--;
+	firstSize--;
 }
 
 void Stack::popSecond() {
@@ -90,7 +92,7 @@ int Stack::peekSecond() {
 }
 
 bool Stack::isEmptyFirst() {
-	if (firstCapacity == 0) {
+	if (firstSize == 0) {
 		return true;
 	} else {
 		return false;
@@ -98,7 +100,7 @@ bool Stack::isEmptyFirst() {
 }
 
 bool Stack::isEmptySecond() {
-	if (secondCapacity == 0) {
+	if (secondSize == 0) {
 		return true;
 	} else {
 		return false;
@@ -131,6 +133,7 @@ void Stack::doubleArraySize(){
 
 	}
 
+	size = new_size;
 	array = temp;
 	delete[] temp;
 
