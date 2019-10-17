@@ -3,42 +3,59 @@ using namespace std;
 
 #include "Stack.h"
 
-Stack::Stack() {}
-
-void Stack::pushFirst(int array[], int size, int data) {
-	array[0] = data;
+Stack::Stack() {
+	size = 10;
+	array = new int [size];
+	firstCapacity = 0;
+	secondCapacity = 0;
 }
 
-void Stack::pushSecond(int array[], int size, int data) {
+void Stack::pushFirst(int data) {
+
+	if (firstCapacity < (size / 2) - 1) {
+
+		for(int i = 0; i < firstCapacity; ++i){
+			array[i+1] = array[i];
+		}
+
+		array[0] = data;
+
+
+		firstCapacity++;
+	}
+
+}
+
+void Stack::pushSecond(int data) {
 	array[size / 2] = data;
 }
 
-int Stack::popFirst(int array[], int size) {
+int Stack::popFirst() {
 	return array[0];
 }
 
-int Stack::popSecond(int array[], int size) {
+int Stack::popSecond() {
 	return array[size / 2];
 }
 
-int Stack::peekFirst(int array[], int size) {
+int Stack::peekFirst() {
 	return array[0];
 }
 
-int Stack::peekSecond(int array[], int size) {
+int Stack::peekSecond() {
 	return array[size / 2];
 }
 
-bool Stack::isEmptyFirst(int capacity) {
-	if (capacity == 0) {
+bool Stack::isEmptyFirst() {
+	if (firstCapacity == 0) {
 		return true;
 	} else {
 		return false;
 	}
 }
 
-bool Stack::isEmptySecond(int capacity) {
-	if (capacity == 0) {
+bool Stack::isEmptySecond() {
+	if (secondCapacity == 0) {
 		return true;
 	} else {
 		return false;
@@ -59,4 +76,8 @@ int Stack::getLengthSecond(int array[], int size) {
 		stackLength++;
 	}
 	return stackLength;
+}
+
+void Stack::doubleArraySize(){
+	
 }

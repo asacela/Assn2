@@ -5,18 +5,23 @@ class Stack {
 
 private: 
 	int size;
+	int *list;
+	int data;
+	int firstCapacity;
+	int secondCapacity;
+	void doubleArraySize();
 public:
 		Stack();
-		void pushFirst(int array[], int size, int data);
-		void pushSecond(int array[], int size, int data);
-		int popFirst(int array[], int size);
-		int popSecond(int array[], int size);
-		int peekFirst(int array[], int size);
-		int peekSecond(int array[], int size);
-		bool isEmptyFirst(int capacity);
-		bool isEmptySecond(int capacity);
-		int getLengthFirst(int array[], int size);
-		int getLengthSecond(int array[], int size);
+		void pushFirst();
+		void pushSecond();
+		int popFirst();
+		int popSecond();
+		int peekFirst();
+		int peekSecond();
+		bool isEmptyFirst();
+		bool isEmptySecond();
+		int getLengthFirst();
+		int getLengthSecond();
 };
 
 #endif

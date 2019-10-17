@@ -4,39 +4,14 @@ using namespace std;
 #include "Stack.h"
 
 int main() {
-	Stack first;
-	int firstCapacity = 0;
+	
+	// cout << "Initial Array: [";
+	// for (int i = 0; i < size - 1; i++) {
+	// 	cout << array[i] << ", ";
+	// }
+	// cout << array[size - 1] << ']' << endl << endl;
 
-	Stack second;
-	int secondCapacity = 0;
-
-	int size = 8;
-	int *array = new int[size];
-
-	cout << "Initial Array: [";
-	for (int i = 0; i < size - 1; i++) {
-		cout << array[i] << ", ";
-	}
-	cout << array[size - 1] << ']' << endl << endl;
-
-	cout << "Inserting '8' into first stack using pushFirst..." << endl << endl;
-	if ((firstCapacity + 1) != (size / 2)) {
-		first.pushFirst(array, size, 8);
-		firstCapacity++;
-	} else {
-		int *newArray = new int[size * 2];
-		for (int i = 0; i < size / 2; i++) {
-			newArray[i] = array[i];
-		}
-		for (int j = size / 2; j < size; j++) {
-			newArray[j] = array[j];
-		}
-		delete[] array;
-		array = newArray;
-		size = size * 2;
-		first.pushFirst(array, size, 8);
-		firstCapacity++;
-	}
+	
 
 	cout << "Array after calling pushFirst: [";
 	for (int i = 0; i < size - 1; i++) {
